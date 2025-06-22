@@ -54,7 +54,9 @@ tiling_drag modifier titlebar
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty 
+bindsym $mod+Return exec alacritty 
+
+# close an open window
 bindsym $mod+x kill 
 
 # start dmenu (a program launcher)
@@ -62,23 +64,23 @@ bindsym $mod+x kill
 #i choose to use ulauncher instead of dmenu
 bindsym $mod+space exec ulauncher
 
-# change focus with "vi" keys
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ntilde focus right
+# change focus with vi keys
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
+bindsym $mod+Left focus left 
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window, again, with "vi" keys
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -86,11 +88,14 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
+# split in h[o]rizontal orientation
+bindsym $mod+o split h
 
-# split in vertical orientation
+# split in [v]ertical orientation
 bindsym $mod+v split v
+
+# or just enable an autotiler and never use those again :p
+exec_always --no-startup-id /home/diego/.scripts/i3-auto-layout 
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -151,14 +156,14 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize 1shrink height 10 px or 10 ppt
-        bindsym ntilde resize grow width 10 px or 10 ppt
+        # Pressing h will shrink the window’s width.
+        # Pressing l will grow the window’s width.
+        # Pressing k will shrink the window’s height.
+        # Pressing j will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize 1shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -173,8 +178,9 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Polybar setup
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Polybar setup (startup / toggle)
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
+bindsym $mod+p exec $HOME/.config/polybar/toggle.sh
 
 #Background image via feh
 exec_always feh --bg-fill $HOME/Imágenes/abstract-swirls.jpg
@@ -188,8 +194,11 @@ exec_always --no-startup-id /usr/libexec/csd-xsettings
 #Window border style
 default_border pixel 0
 
-#Open up nvim directly
-bindsym $mod+n exec kitty -e nvim&
+#Open up browsers
+bindsym $mod+e exec firefox 
+bindsym $mod+z exec flatpak run app.zen_browser.zen
 
-#Open up nnn directly (its currently not worth it)
-bindsym $mod+e exec kitty -e nnn&
+#Set up some gaps (doesen't look quite right with my current desktop)
+# gaps inner 5px
+# gaps outer 3px
+# smart_gaps inverse_outer

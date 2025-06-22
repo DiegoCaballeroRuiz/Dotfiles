@@ -124,10 +124,6 @@ export PATH="/home/diego/.cargo/bin:$PATH"
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
 
-#TheFuck
-eval $(thefuck --alias)
-alias fk="fuck"
-
 #add starship prompt
 eval "$(starship init bash)"
 
@@ -169,3 +165,4 @@ n() {
     rm -f -- "$NNN_TMPFILE" >/dev/null
   }
 }
+. "$HOME/.cargo/env"
