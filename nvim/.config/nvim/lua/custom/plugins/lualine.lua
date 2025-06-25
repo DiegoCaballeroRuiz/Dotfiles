@@ -13,16 +13,6 @@ return {
           theme = 'palenight',
           icons_enabled = true,
         },
-        --If noice.nvim is enabled, this makes it so recording a macro is displayed in the status bar
-        sections = {
-          lualine_x = {
-            {
-              require('noice').api.statusline.mode.get,
-              cond = require('noice').api.statusline.mode.has,
-              color = { fg = '#ff9e64' },
-            },
-          },
-        },
       }
     end,
   },

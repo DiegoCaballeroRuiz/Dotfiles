@@ -32,4 +32,4 @@ opacity = 0.8
 
 #Line cursor
 [cursor]
-style = "Beam"
+style = "Block"
