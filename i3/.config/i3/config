@@ -62,7 +62,7 @@ bindsym $mod+x kill
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
 #i choose to use ulauncher instead of dmenu
-bindsym $mod+space exec ulauncher
+bindsym $mod+space exec ulauncher 
 
 # change focus with vi keys
 bindsym $mod+h focus left
@@ -178,6 +178,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Restore GNOME's settings
+exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
+exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
+
 # Polybar setup (startup / toggle)
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh 
 bindsym $mod+p exec $HOME/.config/polybar/toggle.sh
@@ -188,17 +192,11 @@ exec_always feh --bg-fill $HOME/Imágenes/abstract-swirls.jpg
 #Use picom as the compositor
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
-#Use Cinnamon GUI options
-exec_always --no-startup-id /usr/libexec/csd-xsettings
-
 #Window border style
 default_border pixel 0
 
-#Open up browsers
-bindsym $mod+e exec firefox 
-bindsym $mod+z exec flatpak run app.zen_browser.zen
+#Open file explorer
+bindsym $mod+e exec nautilus
 
-#Set up some gaps (doesen't look quite right with my current desktop)
-# gaps inner 5px
-# gaps outer 3px
-# smart_gaps inverse_outer
+#Open up browser
+bindsym $mod+z exec flatpak run app.zen_browser.zen
