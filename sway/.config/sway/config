@@ -1,9 +1,6 @@
 # Default config for sway
 # Read `man 5 sway` for a complete reference.
 
-# Catppuccin Mocha colors
-include catppuccin-mocha
-
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -53,9 +50,7 @@ input * {
 # Read `man 5 sway-input` for more information about this section.
 
 ### Key bindings
-#
-# Basics:
-#
+
 # Start a terminal
 bindsym $mod+Return exec $term
 
@@ -125,10 +120,10 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # You can "split" the current object of your focus with
-# $mod+o or $mod+v, for horizontal and vertical splits
-# respectively.
-bindsym $mod+v splith
+# $mod+o or $mod+v, for h[O]rizontal and [V]ertical splits
 bindsym $mod+o splitv
+bindsym $mod+v splith
+# For some reason they split opposite to what I thought lol
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
@@ -160,10 +155,10 @@ bindsym $mod+minus scratchpad show
 # Resizing containers:
 mode "resize" {
     # With vi keys
-    bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $left resize shrink width 50px
+    bindsym $down resize grow height 50px
+    bindsym $up resize shrink height 50px
+    bindsym $right resize grow width 50px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
@@ -197,16 +192,20 @@ exec_always --no-startup-id sh -c 'pkill -x waybar; waybar &'
 exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
 exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 
-#Window border style
-default_border pixel 2
+## Window border style
+default_border pixel 1
 default_floating_border none
-#                        title     bg    text   indicator  border
+
+# Catppuccin Mocha colors
+include catppuccin-mocha
+##                       title     bg    text   indicator  border
 client.focused           $mauve    $base $text  $rosewater $mauve
 client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
 client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
+##
 
 #Launch browser
 bindsym $mod+z exec flatpak run app.zen_browser.zen
@@ -217,4 +216,9 @@ bindsym $mod+e exec nautilus
 #Enable notifications
 exec_always swaync
 
+#Gaps
+gaps outer 5
+gaps inner 10
+
+### End
 include /etc/sway/config.d/*

@@ -53,7 +53,8 @@ tooltip {
 #custom-notification:hover,
 #bluetooth:hover,
 #network:hover,
-#battery:hover {
+#battery:hover,
+#pulseaduio:hover {
   transition: all 0.3s ease;
   color: #cba6f7;
   /* --mauve */
@@ -159,4 +160,18 @@ tooltip {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#pulseaudio {
+  padding: 0px 5px;
+  transition: all 0.3s ease;
+  color: #cba6f7;
+  /* --mauve */
+}
+
+#pulseaudio.muted {
+  padding: 0px 5px;
+  transition: all 0.3s ease;
+  color: #f38ba8;
+  /* --mauve */
 }

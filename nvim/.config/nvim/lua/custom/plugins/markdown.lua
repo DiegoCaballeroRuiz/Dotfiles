@@ -15,6 +15,7 @@ return {
     build = 'cd app && npm install',
     config = function()
       vim.g.mkdp_filetypes = { 'markdown' }
+      vim.g.mkdp_browser = 'firefox'
       vim.keymap.set('n', '<leader>mp', ':MarkdownPreviewToggle <CR>', {})
     end,
   },
