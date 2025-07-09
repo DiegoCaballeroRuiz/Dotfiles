@@ -1,18 +1,16 @@
-# Default config for sway
-# Read `man 5 sway` for a complete reference.
-
-# Logo key. Use Mod1 for Alt.
+# Set super as mod
 set $mod Mod4
-# Home row direction keys, like vim
+
+# Direction keys (i use vim btw)
 set $left h
 set $down j
 set $up k
 set $right l
 
-#Terminal emulator
+# Terminal emulator
 set $term alacritty
 
-#Application launcher
+# Application launcher
 set $menu ulauncher
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -30,26 +28,25 @@ exec swayidle -w \
         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
         before-sleep 'swaylock -f -c 000000'
 
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+## Input configuration
 
-# Input configuration
+# Enable touchpad
 input "2:14:SynPS/2_Synaptics_TouchPad" {
   dwt enabled
   tap enabled
   natural_scroll enabled
   middle_emulation enabled
 }
-
+# Set keyboard layout to spanish QWERTY
 input * {
   xkb_layout es
 }
+##
 
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+# Enable notifications
+exec_always swaync
 
-### Key bindings
+## Key bindings
 
 # Start a terminal
 bindsym $mod+Return exec $term
@@ -60,11 +57,8 @@ bindsym $mod+x kill
 # Start your launcher
 bindsym $mod+space exec $menu
 
-# Drag floating windows by holding down $mod and left mouse button.
+# Drag windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
-# mouse button for dragging.
 floating_modifier $mod normal
 
 # Reload the configuration file
@@ -73,7 +67,7 @@ bindsym $mod+Shift+r reload
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
-# Move your focus around with vi keys
+# Move your focus around 
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
@@ -183,7 +177,8 @@ bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
 # Special key to take a screenshot with grim
-bindsym Print exec grim
+bindsym Print exec grim - | swappy -f - 
+bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f -
 
 # Status Bar:
 exec_always --no-startup-id sh -c 'pkill -x waybar; waybar &'
@@ -207,18 +202,27 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 ##
 
-#Launch browser
+# Launch browser
 bindsym $mod+z exec flatpak run app.zen_browser.zen
 
-#Launch file explorer
-bindsym $mod+e exec nautilus
+# Launch file explorer
+bindsym $mod+e exec nautilus &
 
-#Enable notifications
-exec_always swaync
+##
 
-#Gaps
+
+# Gaps
 gaps outer 5
 gaps inner 10
+smart_gaps on
+
+# Rules
+for_window [app_id="blueman-manager"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
+for_window [app_id="pavucontrol"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
+for_window [app_id="org.gnome.Calculator"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
+for_window [app_id="org.gnome.TextEditor"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
+for_window [app_id="org.gnome.Calendar"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
+for_window [app_id="Nautilus"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
 
 ### End
 include /etc/sway/config.d/*

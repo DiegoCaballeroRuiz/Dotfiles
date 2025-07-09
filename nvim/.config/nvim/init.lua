@@ -1,10 +1,8 @@
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- NOTE: Setting leader here to prevent plugins or keymaps from using the wrong one
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
+-- Setting up nerd font
 vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
@@ -12,6 +10,9 @@ require 'options'
 
 -- [[ Basic Keymaps ]]
 require 'keymaps'
+
+-- [[ Auto-commands ]]
+require 'autocmds'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
