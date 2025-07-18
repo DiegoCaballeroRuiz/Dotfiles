@@ -224,5 +224,7 @@ for_window [app_id="org.gnome.TextEditor"] floating enable, move absolute positi
 for_window [app_id="org.gnome.Calendar"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
 for_window [app_id="Nautilus"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
 
+for_window [app_id="zen"] border none
+
 ### End
 include /etc/sway/config.d/*

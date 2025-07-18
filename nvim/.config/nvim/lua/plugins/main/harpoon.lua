@@ -1,5 +1,6 @@
 return {
   {
+    -- Blazing fast and in-file persistent global marks, great for big proyects
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -8,48 +9,41 @@ return {
       local harpoon = require 'harpoon'
       harpoon:setup()
 
-      -- Manipulating the list
-      local add = function()
-        harpoon:list():add()
-      end
-      vim.keymap.set('n', '<leader>ha', add, { desc = '[H]arpoon [A]dd' })
+      -- Openning the list
+      vim.keymap.set('n', '<leader>hh', function()
+        endharpoon.ui:toggle_quick_menu(harpoon:list())
+      end, { desc = '[H]arpoon' })
 
-      local list = function()
-        harpoon.ui:toggle_quick_menu(harpoon:list())
-      end
-      vim.keymap.set('n', '<leader>hh', list, { desc = '[H]arpoon' })
+      -- Adding current buffer to the list
+      vim.keymap.set('n', '<leader>ha', function()
+        harpoon:list():add()
+      end, { desc = '[H]arpoon [A]dd' })
 
       -- Jumping through the list
-      local select1 = function()
+      vim.keymap.set('n', '<leader>hj', function()
         harpoon:list():select(1)
-      end
-      vim.keymap.set('n', '<leader>hj', select1, { desc = '[H]arpoon 1' })
+      end, { desc = '[H]arpoon 1' })
 
-      local select2 = function()
+      vim.keymap.set('n', '<leader>hk', function()
         harpoon:list():select(2)
-      end
-      vim.keymap.set('n', '<leader>hk', select2, { desc = '[H]arpoon 2' })
+      end, { desc = '[H]arpoon 2' })
 
-      local select3 = function()
+      vim.keymap.set('n', '<leader>hl', function()
         harpoon:list():select(3)
-      end
-      vim.keymap.set('n', '<leader>hl', select3, { desc = '[H]arpoon 3' })
+      end, { desc = '[H]arpoon 3' })
 
-      local select4 = function()
+      vim.keymap.set('n', '<leader>hñ', function()
         harpoon:list():select(4)
-      end
-      vim.keymap.set('n', '<leader>hñ', select4, { desc = '[H]arpoon 4' })
+      end, { desc = '[H]arpoon 4' })
 
       -- Toggle previous & next buffers stored within Harpoon list
-      local prev = function()
+      vim.keymap.set('n', '<leader>hn', function()
         harpoon:list():prev()
-      end
-      vim.keymap.set('n', '<leader>hn', prev, { desc = '[H]arpoon [N]ext' })
+      end, { desc = '[H]arpoon [N]ext' })
 
-      local next = function()
+      vim.keymap.set('n', '<leader>hp', function()
         harpoon:list():next()
-      end
-      vim.keymap.set('n', '<leader>hp', next, { desc = '[H]arpoon [P]revious' })
+      end, { desc = '[H]arpoon [P]revious' })
     end,
   },
 }

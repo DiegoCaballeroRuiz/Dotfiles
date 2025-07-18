@@ -1,4 +1,4 @@
--- File manager as a vim buffer
+-- File 'manager' as a vim buffer
 return {
   'stevearc/oil.nvim',
   ---@module 'oil'

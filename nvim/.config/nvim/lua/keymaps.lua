@@ -22,7 +22,6 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
---  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
@@ -58,14 +57,18 @@ vim.keymap.set('n', '<leader>bo', closeOtherBuffers, { desc = '[B]uffer delete [
 --
 --
 
+-- Easier splits
+vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { desc = '[S]plit [V]ertical' })
+vim.keymap.set('n', '<leader>sh', ':split<CR>', { desc = '[S]plit [H]orizontal' })
+
 -- Autopairs
--- NOTE: This is meant for using nvim pluginless: mini.pairs works great and is tiny af
+-- NOTE: This is meant for using nvim pluginless: mini.pairs works great and is tiny
 --
--- vim.keymap.set('i', '(', '()<Escape>i')
--- vim.keymap.set('i', '[', '[]<Escape>i')
--- vim.keymap.set('i', '{', '{}<Escape>i')
--- vim.keymap.set('i', '{', '{}<Escape>i')
--- vim.keymap.set('i', "'", "''<Escape>i")
--- vim.keymap.set('i', '"', '""<Escape>i')
+-- vim.keymap.set('i', '(', '()<Left>')
+-- vim.keymap.set('i', '[', '[]<Left>')
+-- vim.keymap.set('i', '{', '{}<Left>')
+-- vim.keymap.set('i', '{', '{}<Left>')
+-- vim.keymap.set('i', "'", "''<Left>")
+-- vim.keymap.set('i', '"', '""<Left>')
 
 -- vim: ts=2 sts=2 sw=2 et

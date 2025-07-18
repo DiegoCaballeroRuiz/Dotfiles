@@ -1,5 +1,6 @@
 return {
   {
+    -- Plugin that allows to switch from tmux to vim splits and viceversa with the same keybinding
     'christoomey/vim-tmux-navigator',
     cmd = {
       'TmuxNavigateLeft',

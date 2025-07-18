@@ -6,6 +6,9 @@ require('lazy').setup({
   require 'plugins.optional.todo-comments',
   -- require 'plugins.optional.debug',
   -- require 'plugins.optional.lint'
+  -- require 'plugins.optional.telescope'
+  -- require 'plugins.optional.cmake-tools'
+  -- require 'plugins.optional.love2d'
 
   -- Include main plugins folder
   { import = 'plugins.main' },
