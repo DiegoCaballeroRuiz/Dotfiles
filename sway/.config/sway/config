@@ -13,6 +13,9 @@ set $term alacritty
 # Application launcher
 set $menu ulauncher
 
+# Browser
+set $browser zen-browser
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/Imágenes/abstract-swirls.jpg fill
 #
@@ -203,7 +206,7 @@ client.background        $base
 ##
 
 # Launch browser
-bindsym $mod+z exec flatpak run app.zen_browser.zen
+bindsym $mod+z exec $browser
 
 # Launch file explorer
 bindsym $mod+e exec nautilus &
