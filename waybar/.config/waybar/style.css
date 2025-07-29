@@ -1,6 +1,6 @@
 * {
   font-size: 15px;
-  font-family: "DejaVuSansMNerdFont Propo";
+  font-family: "DejaVuSansMNerdFont";
 }
 
 window#waybar {
@@ -123,7 +123,6 @@ tooltip {
 
 #bluetooth {
   padding: 0px 5px;
-  transition: all 0.3s ease;
   color: #cba6f7;
   /* --mauve */
 }
