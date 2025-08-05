@@ -54,6 +54,7 @@ tooltip {
 #bluetooth:hover,
 #network:hover,
 #battery:hover,
+#custom-powermenu:hover
 #pulseaduio:hover {
   transition: all 0.3s ease;
   color: #cba6f7;
@@ -66,6 +67,14 @@ tooltip {
   color: #cba6f7;
   /* --mauve */
 }
+
+#custom-powermenu {
+  padding: 0px 5px;
+  transition: all 0.3s ease;
+  color: #cba6f7;
+  /* --mauve */
+}
+
 
 #clock {
   padding: 0px 5px;

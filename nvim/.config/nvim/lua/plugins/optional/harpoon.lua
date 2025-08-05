@@ -11,7 +11,7 @@ return {
 
       -- Openning the list
       vim.keymap.set('n', '<leader>hh', function()
-        endharpoon.ui:toggle_quick_menu(harpoon:list())
+        harpoon.ui:toggle_quick_menu(harpoon:list())
       end, { desc = '[H]arpoon' })
 
       -- Adding current buffer to the list

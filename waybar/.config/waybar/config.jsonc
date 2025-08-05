@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification","clock"],
+        "modules-left": ["custom/powermenu", "clock", "custom/notification"],
         "modules-center": ["sway/workspaces"],
         "modules-right": ["pulseaudio", "bluetooth","network","battery"],
 
@@ -13,13 +13,13 @@
 
         "custom/notification": {
             "tooltip": false,
-            "format": "󰂚  ",
+            "format": "󰂚",
             "on-click": "swaync-client -t -sw",
             "escape": true
         },
 
         "clock": {
-            "format": "󰥔 {:%H:%M  󰃭 %d/%m/%Y} ",
+            "format": "󰥔 {:%H:%M  󰃭 %d/%m/%Y}",
             "interval": 1,   
             "tooltip-format": "<tt>{calendar}</tt>",
             "calendar": {
@@ -81,5 +81,12 @@
             "format-muted": "󰝟 ",
             "on-click": "pavucontrol",
             "scroll-step": 1,
-        }
+        },
+
+      "custom/powermenu" : {
+            "tooltip": false,
+            "format": "⏻ ",
+            "on-click": "pkill wlogout; wlogout",
+            "escape": true
+      }
 } 

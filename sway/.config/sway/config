@@ -16,6 +16,9 @@ set $menu ulauncher
 # Browser
 set $browser zen-browser
 
+# File explorer
+set $explorer nautilus
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg ~/Imágenes/abstract-swirls.jpg fill
 #
@@ -183,6 +186,14 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym Print exec grim - | swappy -f - 
 bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f -
 
+# Launch browser
+bindsym $mod+z exec $browser
+
+# Launch file explorer
+bindsym $mod+e exec $explorer
+
+##
+
 # Status Bar:
 exec_always --no-startup-id sh -c 'pkill -x waybar; waybar &'
 
@@ -205,19 +216,13 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 ##
 
-# Launch browser
-bindsym $mod+z exec $browser
-
-# Launch file explorer
-bindsym $mod+e exec nautilus &
-
-##
-
-
 # Gaps
 gaps outer 5
 gaps inner 10
 smart_gaps on
+
+# Autotiler
+exec_always autotiling &
 
 # Rules
 for_window [app_id="blueman-manager"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt
