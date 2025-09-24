@@ -4,8 +4,8 @@ require('lazy').setup({
   -- Include optional plugins (not always used or in testing stage)
   -- NOTE: I load them one by one to use only what I need at the moment
   require 'plugins.optional.todo-comments',
-  require 'plugins.optional.harpoon',
-  -- require 'plugins.optional.debug',
+  require 'plugins.optional.debug',
+  -- require 'plugins.optional.harpoon',
   -- require 'plugins.optional.lint'
   -- require 'plugins.optional.telescope'
   -- require 'plugins.optional.cmake-tools'

@@ -192,6 +192,9 @@ bindsym $mod+z exec $browser
 # Launch file explorer
 bindsym $mod+e exec $explorer
 
+# Launch powermenu
+bindsym $mod+p exec 'pkill -x wlogout; wlogout'
+
 ##
 
 # Status Bar:
@@ -223,6 +226,9 @@ smart_gaps on
 
 # Autotiler
 exec_always autotiling &
+
+# Add gpu warmup
+exec alacritty -e true
 
 # Rules
 for_window [app_id="blueman-manager"] floating enable, move absolute position centered, resize set 50 ppt 65 ppt

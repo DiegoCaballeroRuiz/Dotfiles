@@ -5,8 +5,13 @@ return {
       -- Better Around/Inside textobjects
       require('mini.ai').setup { n_lines = 500 }
 
-      -- Add/delete/replace surroundings (brackets, quotes, etc.)
+      -- Operate with surrounding brackets, quotes, etc
       require('mini.surround').setup {}
+      -- Add surrounding with sa
+      -- Delete surrounding with sd
+      -- Replace surrounding with sr
+      -- Find surrounding with sf(right) or sF(left)
+      -- Highlight surrounding with sh
 
       -- Small autopair plugin
       require('mini.pairs').setup {}

@@ -2,10 +2,9 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/powermenu", "clock", "custom/notification"],
+        "modules-left": ["custom/notification", "clock"],
         "modules-center": ["sway/workspaces"],
         "modules-right": ["pulseaudio", "bluetooth","network","battery"],
-
 
         "sway/workspaces": {
             "format": "{name}",
@@ -13,7 +12,7 @@
 
         "custom/notification": {
             "tooltip": false,
-            "format": "󰂚",
+            "format": "󰂚 ",
             "on-click": "swaync-client -t -sw",
             "escape": true
         },
@@ -28,10 +27,11 @@
                 }
             },
             "actions": {
-                "on-click-right": "shift_down",
-                "on-click": "shift_up"
+                "on-click": "alacritty -e when ci",
+                "on-click-right": "alacritty -e when e",
             }
         },
+
         "network": {
             "interval": 5,
             "format-wifi": " ",
@@ -42,6 +42,7 @@
             "tooltip-format-ethernet": "{ifname} 🖧 ",
             "on-click": "alacritty -e nmtui"
         },
+
         "bluetooth": {
             "interval": 5,
             "format-on": "󰂯",
@@ -55,6 +56,7 @@
             "tooltip-format-enumerate-connected-battery": "{device_alias}\n{device_address}\n{device_battery_percentage}%",
             "on-click": "blueman-manager",
         }, 
+
         "battery": {
             "interval": 5,
             "states": {
@@ -87,6 +89,6 @@
             "tooltip": false,
             "format": "⏻ ",
             "on-click": "pkill wlogout; wlogout",
-            "escape": true
-      }
-} 
+            "escape": true,
+      },
+}

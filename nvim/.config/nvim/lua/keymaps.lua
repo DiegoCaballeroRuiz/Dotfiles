@@ -58,8 +58,13 @@ vim.keymap.set('n', '<leader>bo', closeOtherBuffers, { desc = '[B]uffer delete [
 --
 
 -- Easier splits
-vim.keymap.set('n', '<leader>sv', ':vsplit<CR>', { desc = '[S]plit [V]ertical' })
-vim.keymap.set('n', '<leader>sh', ':split<CR>', { desc = '[S]plit [H]orizontal' })
+vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = '[S]plit [V]ertical' })
+vim.keymap.set('n', '<leader>sh', '<cmd>split<CR>', { desc = '[S]plit [H]orizontal' })
+
+-- Cd vim to the directory of the file currently editing
+vim.keymap.set('n', '<leader>cd', '<cmd>lcd%:p:h<CR>', { desc = 'cd to files directory' })
+
+vim.keymap.set('n', '<leader>r', '<cmd>!./run<CR>', { desc = '[R]un c++ code with runfile' })
 
 -- Autopairs
 -- NOTE: This is meant for using nvim pluginless: mini.pairs works great and is tiny
