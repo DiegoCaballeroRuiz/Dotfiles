@@ -27,9 +27,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Escape insert mode
-vim.keymap.set('i', 'jj', '<Escape>')
-
 -- Enter command mode through ñ
 vim.keymap.set({ 'n', 'v' }, 'ñ', ':')
 
@@ -62,7 +59,11 @@ vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = '[S]plit [V]ertica
 vim.keymap.set('n', '<leader>sh', '<cmd>split<CR>', { desc = '[S]plit [H]orizontal' })
 
 -- Cd vim to the directory of the file currently editing
-vim.keymap.set('n', '<leader>cd', '<cmd>lcd%:p:h<CR>', { desc = 'cd to files directory' })
+vim.keymap.set('n', '<leader>cd', '<cmd>lcd%:p:h<CR>', { desc = '[C][D] to file\'s directory' })
+
+-- Yank and paste into/from system clipboard
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = "[Y]ank to system clipboard"})
+vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "[P]aste from system clipboard"})
 
 -- Autopairs
 -- NOTE: This is meant for using nvim pluginless: mini.pairs works great and is tiny

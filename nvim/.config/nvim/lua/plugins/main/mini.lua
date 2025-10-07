@@ -77,8 +77,8 @@ return {
           { mode = 'n', keys = '<leader>f', desc = '[F]ind' },
           { mode = 'n', keys = '<leader>t', desc = '[T]oggle' },
           { mode = 'n', keys = '<leader>b', desc = '[B]uffers' },
-          { mode = 'n', keys = '<leader>v', desc = 'LÖ[V]E' },
-          { mode = 'n', keys = '<leader>h', desc = '[H]arpoon' },
+          -- { mode = 'n', keys = '<leader>v', desc = 'LÖ[V]E' },
+          -- { mode = 'n', keys = '<leader>h', desc = '[H]arpoon' },
           { mode = 'n', keys = '<leader>s', desc = '[S]plits' },
         },
 

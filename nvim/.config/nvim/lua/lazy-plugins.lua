@@ -3,12 +3,12 @@ require('lazy').setup({
 
   -- Include optional plugins (not always used or in testing stage)
   -- NOTE: I load them one by one to use only what I need at the moment
-  require 'plugins.optional.todo-comments',
+  -- require 'plugins.optional.todo-comments',
+  -- require 'plugins.optional.cmake-tools',
   -- require 'plugins.optional.harpoon',
-  -- require 'plugins.optional.lint'
-  -- require 'plugins.optional.telescope'
-  -- require 'plugins.optional.cmake-tools'
-  -- require 'plugins.optional.love2d'
+  -- require 'plugins.optional.lint',
+  -- require 'plugins.optional.telescope',
+  -- require 'plugins.optional.love2d',
 
   -- Include main plugins folder
   { import = 'plugins.main' },
