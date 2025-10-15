@@ -68,6 +68,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'lldb',
       },
     }
 
@@ -98,6 +99,12 @@ return {
           size = 10,
         },
       },
+    }
+
+    dap.adapters.lldb = {
+      type = 'executable',
+      command = '/usr/bin/lldb-vscode', -- adjust as needed, must be absolute path
+      name = 'lldb',
     }
 
     -- Change breakpoint icons
