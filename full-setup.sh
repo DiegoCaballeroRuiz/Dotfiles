@@ -10,7 +10,7 @@ echo "The current images, programs and script directories are $IMAGES_DIR, $PROG
 
 # Installing AUR helper (yay)
 echo
-if [[ pacman -Q yay > /dev/null 2>&1 ]]; then
+if  pacman -Q yay > /dev/null 2>&1; then
   echo "yay found, skipping instalation";
 else 
   echo "Installing AUR helper and dependencies"
@@ -35,12 +35,12 @@ echo "WARNING, current setup uses hyperland as the main window manager, if you w
 # Install mandatory apps
 echo
 echo "Installing all required apps for the setup"
-sudo pacman -Sy alacritty fastfetch hyprland hyprpaper hyprlock swaync swayosd swayidle nvim tmux waybar wlogout pavucontrol blueman-manager nmtui swappy grim slurp starship ttf-dejavu-nerd stow fastfetch nautilus eza fzf
-yay -Sy zen-browser-bin ulauncher catppuccin-gtk-theme-mocha
+sudo pacman -Sy alacritty fastfetch hyprland hyprpaper hyprlock swaync swayosd swayidle nvim tmux waybar pavucontrol blueman networkmanager swappy grim slurp starship ttf-dejavu-nerd stow fastfetch nautilus eza fzf
+yay -Sy zen-browser-bin ulauncher catppuccin-gtk-theme-mocha wlogout 
 
 # Install optional apps
 echo "Do you wish to install some extra apps that I always like to have? [y/N]"
-read(INPUT)
+read INPUT
 
 if [[ $INPUT == y ]]; then
   echo "Instalando las aplicaciones extra"
@@ -51,34 +51,34 @@ echo "Instalation complete, applying configuration files now"
 
 # Stow dotfiles
 echo "Updating dotfiles for alacritty"
-stow ./alacritty
+stow alacritty
 
 echo "Updating dotfiles for fastfetch"
-stow ./fastfetch
+stow fastfetch
 
 echo "Updating dotfiles for hyprland"
-stow ./hyprland
+stow hyprland
 
 echo "Updating dotfiles for nvim"
-stow ./nvim
+stow nvim
 
 echo "Updating dotfiles for starship"
-stow ./starship
+stow starship
 
 echo "Updating dotfiles for swaync"
-stow ./swaync
+stow swaync
 
 echo "Updating dotfiles for waybar"
-stow ./waybar
+stow waybar
 
 echo "Updating dotfiles for wlogout"
-stow ./wlogout
+stow wlogout
 
 echo "Changing .bashrc"
 cp ./bash/.bashrc ~/.bashrc
 
 echo "Updating dotfiles for tmux"
-stow ./tmux
+stow tmux
 echo "Installing tmux plugin manager"
 rm -rdf ~/.config/tmux/plugins/
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
@@ -87,21 +87,9 @@ echo "Tpm installed, remember updating it after running the first tmux instance 
 # Media and scripts
 echo 
 echo "Copying bash scripts and media"
-cp ./images/* $IMAGES_DIR/
-cp ./scripts/* $SCRIPTS_DIR/
+cp ./images/* $IMAGES_DIR
+cp ./scripts/* $SCRIPTS_DIR
 
 # Done
 echo
-echo "Configuration is done, a reboot is needed for some changes to apply, reboot now? [y/N]"
-read(INPUT)
-
 echo "Dotfiles instalation complete"
-
-if [[ $INPUT == 'y' ]]; 
-  echo "PC will now reboot"
-  sleep 2
-  then reboot
-else 
-  echo "Make sure you reboot soon"
-  echo
-fi
