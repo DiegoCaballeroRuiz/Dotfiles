@@ -13,12 +13,13 @@ export PATH
 
 # Add stuff to path
 export PATH="$HOME/.scripts/:$PATH"
-#Cargo?
-#Homebrew?
 
 # Set nvim as terminal editor
 export VISUAL='nvim'
 export EDITOR=$VISUAL
+
+# Set nvim as manpager
+export MANPAGER='nvim + :Man!'
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
@@ -28,6 +29,5 @@ eval "$(starship init bash)"
 
 # Aliases
 alias v='nvim'
-alias gv='nvim --listen ./nvim.sock'
 alias ls='eza --color=always --group-directories-first --icons'
 alias tree='eza --tree --color=always --group-directories-first --icons '

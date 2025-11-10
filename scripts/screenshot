@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then
+  grim - | swappy -f -
+elif [[ "$1" == "screen" ]]; then
+  grim - | swappy -f -
+elif [[ "$1" == "region" ]]; then
+  grim -g "$(slurp)" - | swappy -f -
+else 
+  echo "Usage: screenshot, screenshot screen or screenshot region"
+fi

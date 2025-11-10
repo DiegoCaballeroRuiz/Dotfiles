@@ -19,5 +19,6 @@
   "oil.nvim": { "branch": "master", "commit": "71948729cda5fc1b761d6ae60ff774b5525f1d50" },
   "render-markdown.nvim": { "branch": "main", "commit": "475d3ad8cae486b0df6fc6050cf5b5ea1de42db8" },
   "table-nvim": { "branch": "main", "commit": "c044fd37169eb10376962b0d0cec5f94d58ca626" },
+  "vim-be-good": { "branch": "master", "commit": "0ae3de14eb8efc6effe7704b5e46495e91931cc5" },
   "vim-tmux-navigator": { "branch": "master", "commit": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a" }
 }

@@ -1,0 +1,217 @@
+@import "catpuccin-mocha.css";
+
+@define-color cc-bg @base;
+@define-color noti-border-color @surface2;
+@define-color noti-bg @surface0;
+@define-color noti-bg-darker @mantle;
+@define-color noti-bg-hover @surface1;
+@define-color noti-bg-focus rgba(24, 24, 37, 0.6);
+
+@define-color text-color @text;
+@define-color text-color-disabled @overlay1;
+@define-color bg-selected @mauve; /* Accent color */
+
+* {
+    font-family: JetBrainsMono NFP;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+    opacity: 1;
+    background: @noti-bg-darker;
+}
+
+.notification-row {
+    outline: none;
+    margin: 20px;
+    padding: 0;
+}
+
+.notification {
+    background: transparent;
+    margin: 0px;
+}
+
+.notification-content {
+    background: @cc-bg;
+    padding: 7px;
+    border-radius: 0px;
+    border: 2px solid @noti-border-color;
+    margin: 0;
+}
+
+.close-button {
+    background: @mauve;
+    color: @cc-bg;
+    text-shadow: none;
+    padding: 0;
+    border-radius: 0px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.close-button:hover {
+    box-shadow: none;
+    background: @lavender;
+    transition: all .15s ease-in-out;
+    border: none;
+}
+
+.notification-action {
+    color: @text;
+    border: 2px solid @noti-border-color;
+    border-top: none;
+    border-radius: 0px;
+    background: @noti-bg;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    color: @text;
+    background: @noti-bg-hover;
+}
+
+.summary {
+    padding-top: 7px;
+    font-size: 13px;
+    color: @text;
+}
+
+.time {
+    font-size: 11px;
+    color: @mauve;
+    margin-right: 24px;
+}
+
+.body {
+    font-size: 12px;
+    color: @subtext0;
+}
+
+.control-center {
+    background: @cc-bg;
+    border: 2px solid @noti-border-color;
+    border-radius: 0px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: .5;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.blank-window {
+    background: alpha(black, 0.1);
+}
+
+.widget-title {
+    color: @text;
+    background: @noti-bg-darker;
+    padding: 5px 10px;
+    margin: 10px 10px 5px 10px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.widget-title>button {
+    font-size: 1rem;
+    color: @text;
+    text-shadow: none;
+    background: @noti-bg;
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.widget-title>button:hover {
+    background: @mauve;
+    color: @cc-bg;
+}
+
+.widget-dnd {
+    background: @noti-bg-darker;
+    padding: 5px 10px;
+    margin: 5px 10px 10px 10px;
+    border-radius: 5px;
+    font-size: large;
+    color: @text;
+}
+
+.widget-dnd>switch {
+    border-radius: 4px;
+    background: @surface1;
+}
+
+.widget-dnd>switch:checked {
+    background: @mauve;
+    border: 1px solid @mauve;
+}
+
+.widget-dnd>switch slider {
+    background: @cc-bg;
+    border-radius: 5px;
+}
+
+.widget-label>label {
+    font-size: 1rem;
+    color: @text-color;
+}
+
+.widget-mpris {
+    color: @text-color;
+    background: @noti-bg-darker;
+    padding: 5px 10px 0px 0px;
+    margin: 5px 10px 5px 10px;
+    border-radius: 0px;
+}
+
+.widget-buttons-grid {
+    font-size: x-large;
+    padding: 5px;
+    margin: 5px 10px 10px 10px;
+    border-radius: 5px;
+    background: @noti-bg-darker;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    margin: 3px;
+    background: @cc-bg;
+    border-radius: 5px;
+    color: @text-color;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: @mauve;
+    color: @cc-bg;
+}
+
+.topbar-buttons>button,
+.widget-menubar>box>.menu-button-bar>button {
+    border: none;
+    background: transparent;
+}
+
+.widget-backlight scale trough,
+.widget-volume scale trough {
+    background: @surface1;
+    border-radius: 6px;
+}
+
+.widget-backlight scale highlight,
+.widget-volume scale highlight {
+    background: @mauve;
+    border-radius: 6px;
+}
+
+.widget-backlight scale slider,
+.widget-volume scale slider {
+    background: @text;
+    border-radius: 6px;
+}

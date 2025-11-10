@@ -1,13 +1,15 @@
-# Mis "Dotfiles"
+# My dotfiles
+This repository is structured around the use of gnu stow. Aditionally, all used tools are arch linux packages
 
-Este repositorio está pensado para gestionar dotfiles con el uso de **GNU Stow**
+## To create a new stow package of your own
+- Create a directory with the name of the package
+- Inside the directory, create a directory structure with the necesary files and directories to be created from ~
+- Check any current package for examples
 
-## Para crear un nuevo "paquete":
-- Añadir un directorio con el nombre del paquete 
-- Crear en el directorio la ruta exacta desde ~/ donde se creará el symlink 
-
-## Para copiar los cambios de un paquete 
-
+## To copy the config inside a package into your machine
 ```bash
-$ stow route/To/Package/
+$ stow packageName
 ```
+
+>[!Warning] Important note
+> I have an install script with my full setup under full-setup.sh, read through and use it if you like what's going on

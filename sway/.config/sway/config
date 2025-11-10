@@ -198,7 +198,7 @@ bindsym $mod+p exec 'pkill -x wlogout; wlogout'
 ##
 
 # Status Bar:
-exec_always --no-startup-id sh -c 'pkill -x waybar; waybar &'
+exec_always --no-startup-id sh -c 'pkill -x waybar; waybar --config $HOME/.config/waybar2/config.jsonc &'
 
 # Restore GNOME's settings
 exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
