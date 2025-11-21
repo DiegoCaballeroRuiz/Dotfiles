@@ -72,8 +72,8 @@
                     "command": "alacritty -e nmtui"
                 },
                 {
-                    "label": "󰂯",
-                    "command": "blueman-manager"
+                    "label": "",
+                    "command": "ulauncher"
                 },
                 {
                     "label": "",

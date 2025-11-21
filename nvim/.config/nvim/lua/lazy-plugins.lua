@@ -9,7 +9,7 @@ require('lazy').setup({
   -- require 'plugins.optional.lint',
   -- require 'plugins.optional.telescope',
   -- require 'plugins.optional.love2d',
-  require 'plugins.optional.vimbegood',
+  -- require 'plugins.optional.vimbegood',
 
   -- Include main plugins folder
   { import = 'plugins.main' },

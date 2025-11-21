@@ -15,10 +15,8 @@
   "nvim-lspconfig": { "branch": "master", "commit": "ac98db2f9f06a56498ec890a96928774eae412c3" },
   "nvim-nio": { "branch": "master", "commit": "21f5324bfac14e22ba26553caf69ec76ae8a7662" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
-  "nvim-web-devicons": { "branch": "master", "commit": "b8221e42cf7287c4dcde81f232f58d7b947c210d" },
+  "nvim-web-devicons": { "branch": "master", "commit": "8dcb311b0c92d460fac00eac706abd43d94d68af" },
   "oil.nvim": { "branch": "master", "commit": "71948729cda5fc1b761d6ae60ff774b5525f1d50" },
   "render-markdown.nvim": { "branch": "main", "commit": "475d3ad8cae486b0df6fc6050cf5b5ea1de42db8" },
-  "table-nvim": { "branch": "main", "commit": "c044fd37169eb10376962b0d0cec5f94d58ca626" },
-  "vim-be-good": { "branch": "master", "commit": "0ae3de14eb8efc6effe7704b5e46495e91931cc5" },
-  "vim-tmux-navigator": { "branch": "master", "commit": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a" }
+  "table-nvim": { "branch": "main", "commit": "c044fd37169eb10376962b0d0cec5f94d58ca626" }
 }

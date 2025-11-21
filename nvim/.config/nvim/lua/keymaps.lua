@@ -27,8 +27,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- Enter command mode through ñ
-vim.keymap.set({ 'n', 'v' }, 'ñ', ':')
+-- Enter command mode through Ñ (spanish equivalent to :)
+vim.keymap.set({ 'n', 'v' }, 'Ñ', ':')
 
 -- Buffer operations:
 --
@@ -59,11 +59,13 @@ vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = '[S]plit [V]ertica
 vim.keymap.set('n', '<leader>sh', '<cmd>split<CR>', { desc = '[S]plit [H]orizontal' })
 
 -- Cd vim to the directory of the file currently editing
-vim.keymap.set('n', '<leader>cd', '<cmd>lcd%:p:h<CR>', { desc = '[C][D] to file\'s directory' })
+vim.keymap.set('n', '<leader>cd', '<cmd>lcd%:p:h<CR>', { desc = "[C][D] to file's directory" })
 
 -- Yank and paste into/from system clipboard
-vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = "[Y]ank to system clipboard"})
-vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "[P]aste from system clipboard"})
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = '[Y]ank to system clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { desc = '[P]aste from system clipboard' })
+
+vim.keymap.set('n', '<leader>r', '<cmd>:make<CR>', { desc = '[R]un code using :make' })
 
 -- Autopairs
 -- NOTE: This is meant for using nvim pluginless: mini.pairs works great and is tiny
@@ -74,5 +76,6 @@ vim.keymap.set({'n', 'v'}, '<leader>p', '"+p', { desc = "[P]aste from system cli
 -- vim.keymap.set('i', '{', '{}<Left>')
 -- vim.keymap.set('i', "'", "''<Left>")
 -- vim.keymap.set('i', '"', '""<Left>')
+--
 
 -- vim: ts=2 sts=2 sw=2 et

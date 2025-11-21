@@ -13,16 +13,18 @@ export PATH
 
 # Add stuff to path
 export PATH="$HOME/.scripts/:$PATH"
+export PATH="$HOME/.scripts/pf/:$PATH"
 
 # Set nvim as terminal editor
 export VISUAL='nvim'
 export EDITOR=$VISUAL
 
 # Set nvim as manpager
-export MANPAGER='nvim + :Man!'
+export MANPAGER='nvim +Man!'
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+# Set up fzf
+eval "$(fzf --bash)" # Add ** binding
+let $FZF_DEFAULT_COMMAND = 'ag -g ""' # Ignore gitignored files
 
 # Launch starship prompt
 eval "$(starship init bash)"

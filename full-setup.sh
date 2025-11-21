@@ -79,10 +79,6 @@ cp ./bash/.bashrc ~/.bashrc
 
 echo "Updating dotfiles for tmux"
 stow tmux
-echo "Installing tmux plugin manager"
-rm -rdf ~/.config/tmux/plugins/
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-echo "Tpm installed, remember updating it after running the first tmux instance with leader+I"
 
 # Media and scripts
 echo 

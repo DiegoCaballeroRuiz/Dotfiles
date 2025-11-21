@@ -1,8 +1,6 @@
 return {
   {
-    -- Amazing fuzzy finder for files, text, lsp references and more!
-    --
-    -- Great telescope alternative that is lighter and has less dependencies but can achieve the exact same thing
+    -- Amazing fuzzy finder for files, text, lsp references, etc. Using the default fzf config
     'ibhagwan/fzf-lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' }, -- optional
     opts = {},
