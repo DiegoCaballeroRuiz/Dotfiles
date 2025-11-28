@@ -7,7 +7,7 @@ return {
     config = function()
       local fzf = require 'fzf-lua'
 
-      -- Sets up fzf lua to look and feel just like telescope!
+      -- Sets up fzf lua with the telescope bindings (Ctrl+q for quickfix, Ctrl+v for vertical split, etc.)
       fzf.setup { 'telescope' }
 
       -- My keybindings

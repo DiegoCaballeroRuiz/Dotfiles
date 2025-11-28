@@ -1,1 +1,1 @@
-vim.o.makeprg = "lua main.lua"
+vim.o.makeprg = "lua %"
