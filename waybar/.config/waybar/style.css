@@ -1,174 +1,136 @@
+@import './catppuccin-mocha.css';
+
 * {
+  /* Remove default settings */
+  border: none;
+  border-radius: 0px;
+  margin: 0px;
+  padding: 0px;
+  min-height: 0px;
+
+  /* Set font and font size */
   font-size: 15px;
-  font-family: "DejaVuSansMNerdFont";
+  font-family: "DejaVuSansMNerdFont Propo";
 }
 
 window#waybar {
-  all: unset;
-}
-
-.modules-left {
-  padding: 7px;
-  margin: 10 0 5 10;
-  border-radius: 10px;
-  background: rgba(30, 30, 46, 0.6);
-  /* --background */
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
-}
-
-.modules-center {
-  padding: 7px;
-  margin: 10 0 5 0;
-  border-radius: 10px;
-  background: rgba(30, 30, 46, 0.6);
-  /* --background */
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
-}
-
-.modules-right {
-  padding: 7px;
-  margin: 10 10 10 0;
-  border-radius: 10px;
-  background: rgba(30, 30, 46, 0.6);
-  /* --background */
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
-}
-
-.modules-left>*:not(:last-child) {
-  margin-right: 15px;
-}
-
-.modules-right>*:not(:last-child) {
-  margin-left: 15px;
+  background: transparent;
 }
 
 tooltip {
-  background: #1e1e2e;
-  /* --background */
-  color: #cba6f7;
-  /* --mauve */
+  background: @bg0;
+  border: 1px solid @bg3;
+  border-radius: 10px;
 }
 
-#clock:hover,
-#custom-notification:hover,
-#bluetooth:hover,
-#network:hover,
-#battery:hover,
-#custom-powermenu:hover
-#pulseaduio:hover {
-  transition: all 0.3s ease;
-  color: #cba6f7;
-  /* --mauve */
-}
-
-#custom-notification {
-  padding: 0px 5px;
-  transition: all 0.3s ease;
-  color: #cba6f7;
-  /* --mauve */
-}
-
-#custom-powermenu {
-  padding: 0px 5px;
-  transition: all 0.3s ease;
-  color: #cba6f7;
-  /* --mauve */
-}
-
-
-#clock {
-  padding: 0px 5px;
-  color: #cba6f7;
-  /* --mauve */
-  transition: all 0.3s ease;
+tooltip label {
+  color: @fg;
+  padding: 5px;
 }
 
 #workspaces {
-  padding: 0px 5px;
+  background-color: @bg0;
+  padding: 5px 3px;
+  border-radius: 10px;
+  border: 1px solid @bg1;
+  color: @fg;
+  margin-bottom: 5px;
 }
 
 #workspaces button {
-  all: unset;
   padding: 0px 5px;
-  color: rgba(180, 190, 254, 0.4);
-  transition: all 0.2s ease;
+  margin: 0px 3px;
+  border-radius: 5px;
+  color: @bg2;
+
+  transition: all 0.1s ease-in-out
 }
 
-#workspaces button:hover {
-  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
+#workspaces button.active {
+  color: @fg;
+  background-color: @bg1;
+  transition: all 0.3s ease-in-out
 }
 
 #workspaces button.active:not(.empty) {
-  color: #b4befe; /* Lavender */
-  border-bottom: 2px solid #cba6f7;
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid @purple;
 }
 
 #workspaces button.occupied:not(.active) {
-  color: rgba(180, 190, 254, 0.6);
+  color: @fg;
 }
 
-#workspaces button.empty {
-  color: rgba(0, 0, 0, 0);
-  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.2);
+#workspaces button:hover {
+  background-color: @light-blue;
+  color: @bg2;
+  transition: all 0.3s ease-in-out;
 }
 
-#workspaces button.empty:hover {
-  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
-  transition: all 1s ease;
+#clock,
+#pulseaudio,
+#battery,
+#network,
+#bluetooth,
+#battery {
+  background-color: @bg0;
+  padding: 0 10px 0 10px;
+  margin: 0 5px 0 5px;
+  border-radius: 10px;
+  border: 1px solid @bg1;
+  margin-bottom: 5px;
+}
+
+#clock {
+  color: @purple;
+  border-bottom: 1px solid @purple;
 }
 
 #bluetooth {
-  padding: 0px 5px;
-  color: #cba6f7;
-  /* --mauve */
+  color: @blue;
+  border-bottom: 1px solid @blue;
 }
 
-#network {
-  padding: 0px 5px;
-  transition: all 0.3s ease;
-  color: #cba6f7;
-  /* --mauve */
-}
-
-#battery {
-  padding: 0px 5px;
-  transition: all 0.3s ease;
-  color: #cba6f7;
-  /* --mauve */
-}
-
-#battery.charging {
-  color: #94e2d5
-    /* --green */
-}
-
-#battery.warning:not(.charging) {
-  color: #f9e2af;
-  /* --yellow */
-}
-
-#battery.critical:not(.charging) {
-  color: #f38ba8;
-  /* --red */
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+#bluetooth.disabled {
+  color: @red;
+  border-bottom: 1px solid @red;
 }
 
 #pulseaudio {
-  padding: 0px 5px;
-  transition: all 0.3s ease;
-  color: #cba6f7;
-  /* --mauve */
+  color: @yellow;
+  border-bottom: 1px solid @yellow;
 }
 
 #pulseaudio.muted {
-  padding: 0px 5px;
-  transition: all 0.3s ease;
-  color: #f38ba8;
-  /* --mauve */
+  color: @red;
+  border-bottom: 1px solid @red;
+}
+
+#battery {
+  color: @purple;
+  border-bottom: 1px solid @purple;
+}
+
+#battery.charging {
+  color: @green;
+  border-bottom: 1px solid @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @orange;
+  border-bottom: 1px solid @orange;
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+  border-bottom: 1px solid @red;
+}
+
+#network {
+  color: @pink;
+  border-bottom: 1px solid @pink;
+}
+
+#network.disabled {
+  color: @red;
+  border-bottom: 1px solid @red;
 }

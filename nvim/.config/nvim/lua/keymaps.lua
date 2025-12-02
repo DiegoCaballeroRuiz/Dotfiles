@@ -20,6 +20,10 @@ vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- Better scrolling
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
@@ -65,7 +69,11 @@ vim.keymap.set('n', '<leader>cd', '<cmd>lcd%:p:h<CR>', { desc = "[C][D] to file'
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = '[Y]ank to system clipboard' })
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { desc = '[P]aste from system clipboard' })
 
+-- Run code with :make
 vim.keymap.set('n', '<leader>r', '<cmd>:make<CR>', { desc = '[R]un code using :make' })
+
+-- Format buffer without plugins or lsp
+vim.keymap.set('n', '<leader>bf', 'mtgg0=G`a', { desc = '[B]uffer [F]ormat' })
 
 -- Autopairs
 -- NOTE: This is meant for using nvim pluginless: mini.pairs works great and is tiny
