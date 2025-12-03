@@ -1,76 +1,83 @@
 {
-        "layer": "bottom",
-        "position": "top",
-        "modules-left": ["clock"],
-        "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["pulseaudio","battery","bluetooth","network",],
+  "layer": "bottom",
+  "position": "top",
+  "modules-left": ["clock"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["pulseaudio","battery","bluetooth","network",],
 
-        "hyprland/workspaces": {
-            "format": "{name}",
-        },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    // "persistent-workspaces": {
+    //   "*": 4
+    // },
+  },
 
-        "custom/notification": {
-            "tooltip": false,
-            "format": " ",
-            "on-click": "swaync-client -t -sw",
-            "escape": true
-        },
+  "custom/notification": {
+    "tooltip": false,
+    "format": " ",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
+  },
 
-        "clock": {
-            "format": "󰥔 {:%H:%M 󰃭 %d/%m}" ,
-            "interval": 1,   
-            "tooltip-format": "<tt>{calendar}</tt>",
-        },
+  "clock": {
+    "format": "󰥔 {:%H:%M 󰃭 %d/%m}" ,
+    "interval": 1,   
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "on-click": "gnome-calendar &",
+  },
 
-        "network": {
-            "interval": 5,
-            "format-wifi": "",
-            "format-ethernet":"",
-            "format-disconnected": "",
-            "on-click": "foot -e nmtui"
-        },
+  "network": {
+    "interval": 5,
+    "format-wifi": "",
+    "format-ethernet":"",
+    "format-disconnected": "",
+    "on-click": "foot -e nmtui",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+  },
 
-        "bluetooth": {
-            "interval": 5,
-            "format-on": "󰂯",
-            "format-off": "󰂲",
-            "format-disabled": "󰂲",
-            "format-connected-battery": "{device_battery_percentage}% 󰂯",
-            "on-click": "blueman-manager",
-        }, 
+  "bluetooth": {
+    "interval": 5,
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected-battery": "{device_battery_percentage}% 󰂯",
+    "on-click": "blueman-manager",
+  }, 
 
-        "battery": {
-            "interval": 5,
-            "states": {
-                "good": 95,
-                "warning": 30,
-                "critical": 20
-            },
-            "format": "{capacity}% {icon}",
-            "format-charging": "{capacity}% 󰂄",
-            "format-plugged": "{capacity}% 󰂄 ",
-            "format-alt": "{time} {icon}",
-            "format-icons": [
-                "󰁻",
-            "󰁼",
-            "󰁾",
-            "󰂀",
-            "󰂂",
-            "󰁹"
-            ],
-        },
+  "battery": {
+    "interval": 5,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% 󰂄",
+    "format-plugged": "{capacity}% 󰂄 ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "󰁻",
+      "󰁼",
+      "󰁾",
+      "󰂀",
+      "󰂂",
+      "󰁹"
+    ],
+  },
 
-        "pulseaudio": {
-            "format": "{volume}% ",
-            "format-muted": "󰝟",
-            "on-click": "pavucontrol",
-            "scroll-step": 1,
-        },
+  "pulseaudio": {
+    "format": "{volume}% ",
+    "format-muted": "󰝟",
+    "on-click": "pavucontrol",
+    "scroll-step": 1,
+  },
 
-      "custom/powermenu" : {
-            "tooltip": false,
-            "format": "⏻",
-            "on-click": "pkill wlogout; wlogout",
-            "escape": true,
-      },
+  "custom/powermenu" : {
+    "tooltip": false,
+    "format": "⏻",
+    "on-click": "pkill wlogout; wlogout",
+    "escape": true,
+  },
 }
