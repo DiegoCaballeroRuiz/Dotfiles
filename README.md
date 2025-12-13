@@ -12,5 +12,5 @@ The configs are meant to work for my current machine only, expect to find things
 $ stow packageName
 ```
 
->[!Warning] Important note
-> I have an install script with my full setup under full-setup.sh, read through and use it if you like what's going on
+### Important note
+I have an install script with my full setup under full-setup.sh, read through and use it if you like what's going on
