@@ -24,7 +24,7 @@ export MANPAGER='nvim +Man!'
 
 # Set up fzf
 eval "$(fzf --bash)" # Add ** binding
-let $FZF_DEFAULT_COMMAND = 'ag -g ""' # Ignore gitignored files
+export FZF_DEFAULT_COMMAND='ag -g ""' # Ignore gitignored files
 
 # Launch starship prompt
 eval "$(starship init bash)"

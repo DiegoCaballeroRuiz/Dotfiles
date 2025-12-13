@@ -1,5 +1,4 @@
--- File 'manager' as a vim buffer
-return {
+return { -- File 'manager' as a vim buffer
   'stevearc/oil.nvim',
   ---@module 'oil'
   ---@type oil.SetupOpts

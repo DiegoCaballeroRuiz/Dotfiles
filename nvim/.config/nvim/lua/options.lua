@@ -1,6 +1,5 @@
 -- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
+--  See `:help vim.o`
 --  For more options, you can see `:help option-list`
 
 -- Enable relative line numbers
@@ -13,12 +12,6 @@ vim.o.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
--- vim.schedule(function()
---   vim.o.clipboard = 'unnamedplus'
--- end)
-
 -- Enable break indent
 vim.o.breakindent = true
 
@@ -30,6 +23,9 @@ vim.cmd 'set shiftwidth=2'
 
 -- Save undo history
 vim.o.undofile = true
+
+-- Remove auto comments on new line
+vim.opt.formatoptions:remove({ "r", "o" })
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
@@ -66,7 +62,7 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
+vim.o.scrolloff = 10 
 
 -- if performing an operation that would fail due to unsaved changes in the buffer,
 -- instead raise a dialog asking if you wish to save the current file(s)

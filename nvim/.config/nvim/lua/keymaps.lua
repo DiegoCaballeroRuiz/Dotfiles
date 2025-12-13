@@ -14,12 +14,6 @@ vim.keymap.set('n', '<C-s>', '<cmd>wa<CR>')
 -- is not what someone will guess without a bit more experience.
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
-
 -- Better scrolling
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
@@ -72,18 +66,11 @@ vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { desc = '[P]aste from system c
 -- Run code with :make
 vim.keymap.set('n', '<leader>r', '<cmd>:make<CR>', { desc = '[R]un code using :make' })
 
--- Format buffer without plugins or lsp
-vim.keymap.set('n', '<leader>bf', 'mtgg0=G`a', { desc = '[B]uffer [F]ormat' })
-
--- Autopairs
--- NOTE: This is meant for using nvim pluginless: mini.pairs works great and is tiny
---
--- vim.keymap.set('i', '(', '()<Left>')
--- vim.keymap.set('i', '[', '[]<Left>')
--- vim.keymap.set('i', '{', '{}<Left>')
--- vim.keymap.set('i', '{', '{}<Left>')
--- vim.keymap.set('i', "'", "''<Left>")
--- vim.keymap.set('i', '"', '""<Left>')
---
+-- Format buffer without plugins using native lsp
+vim.keymap.set('n', '<leader>bf', function ()
+  vim.lsp.buf.format({
+    async = true,
+  })
+end, { desc = '[B]uffer [F]ormat' })
 
 -- vim: ts=2 sts=2 sw=2 et

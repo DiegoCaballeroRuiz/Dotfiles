@@ -69,5 +69,5 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[ ](bold fg:green)'
+success_symbol = '[ ](bold fg:mauve)'
 error_symbol = '[ ](bold fg:red)'

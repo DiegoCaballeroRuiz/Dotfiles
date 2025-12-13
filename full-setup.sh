@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directories
-IMAGES_DIR=~/Imágenes
+IMAGES_DIR=~/Imágenes/Wallpaper/
 PROGRAMS_DIR=~/Programs
 SCRIPTS_DIR=~/.scripts
 
@@ -28,30 +28,23 @@ else
   echo "yay installed, continuing with setup instalation"
 fi
 
-# Sway vs hyprland warning
-echo
-echo "WARNING, current setup uses hyperland as the main window manager, if you want to install and use the sway setup you will have to install sway and swaybg manually and then stow the sway config and change the waybar workspaces config and css"
-
-# Install mandatory apps
-echo
 echo "Installing all required apps for the setup"
-sudo pacman -Sy alacritty fastfetch hyprland hyprpaper hyprlock swaync swayosd swayidle nvim tmux waybar pavucontrol blueman networkmanager swappy grim slurp starship ttf-dejavu-nerd stow fastfetch nautilus eza fzf
-yay -Sy zen-browser-bin ulauncher catppuccin-gtk-theme-mocha wlogout 
+yay pacman -Sy foot fastfetch hyprland lazygit hyprpaper hyprlock swaync swayosd swayidle nvim tmux waybar pavucontrol blueman networkmanager swappy grim slurp starship ttf-dejavu-nerd stow fastfetch nautilus eza fzf fd zen-browser-bin rofi-wayland catppuccin-gtk-theme-mocha wlogout --noconfirm --needed
 
 # Install optional apps
 echo "Do you wish to install some extra apps that I always like to have? [y/N]"
 read INPUT
 
 if [[ $INPUT == y ]]; then
-  echo "Instalando las aplicaciones extra"
-  sudo pacman -Sy kolourpaint obs-studio discord steam warpinator
+  echo "Installing extra apps"
+  yay -Sy kolourpaint obs-studio discord steam --noconfirm --needed
 fi
 
 echo "Instalation complete, applying configuration files now"
 
 # Stow dotfiles
-echo "Updating dotfiles for alacritty"
-stow alacritty
+echo "Updating dotfiles for foot"
+stow foot
 
 echo "Updating dotfiles for fastfetch"
 stow fastfetch
@@ -74,11 +67,11 @@ stow waybar
 echo "Updating dotfiles for wlogout"
 stow wlogout
 
-echo "Changing .bashrc"
-cp ./bash/.bashrc ~/.bashrc
-
 echo "Updating dotfiles for tmux"
 stow tmux
+
+echo "Changing .bashrc"
+cp ./bash/.bashrc ~/.bashrc
 
 # Media and scripts
 echo 

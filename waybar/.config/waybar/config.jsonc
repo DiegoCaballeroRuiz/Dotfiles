@@ -5,22 +5,20 @@
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["pulseaudio","battery","bluetooth","network",],
 
-  "hyprland/workspaces": {
-    "format": "{name}",
+  "hyprland/workspaces": { "format": "{name}",
     // "persistent-workspaces": {
     //   "*": 4
     // },
   },
 
   "custom/notification": {
-    "tooltip": false,
-    "format": " ",
+    "tooltip": false, "format": " ",
     "on-click": "swaync-client -t -sw",
     "escape": true
   },
 
   "clock": {
-    "format": "󰥔 {:%H:%M 󰃭 %d/%m}" ,
+    "format": "󰥔 {:%H:%M 󰃭 %d/%m/%Y}" ,
     "interval": 1,   
     "tooltip-format": "<tt>{calendar}</tt>",
     "on-click": "gnome-calendar &",
