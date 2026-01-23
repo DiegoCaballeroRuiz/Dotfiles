@@ -73,4 +73,7 @@ vim.keymap.set('n', '<leader>bf', function ()
   })
 end, { desc = '[B]uffer [F]ormat' })
 
+-- To use norm command more often
+vim.keymap.set({ 'n', 'v', 'x' }, '<leader>n', ':norm ', { desc = '[N]orm command' })
+
 -- vim: ts=2 sts=2 sw=2 et
