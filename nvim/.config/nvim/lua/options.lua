@@ -21,11 +21,8 @@ vim.cmd 'set tabstop=2'
 vim.cmd 'set softtabstop=2'
 vim.cmd 'set shiftwidth=2'
 
--- Save undo history
+-- Save undo history after closing the editor
 vim.o.undofile = true
-
--- Remove auto comments on new line
-vim.opt.formatoptions:remove({ "r", "o" })
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
@@ -47,18 +44,13 @@ vim.o.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
---
---  Notice listchars is set using `vim.opt` instead of `vim.o`.
---  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
---   See `:help lua-options`
---   and `:help lua-options-guide`
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live
 vim.o.inccommand = 'split'
 
--- Show which line your cursor is on (or don't)
+-- Don't show which line your cursor is on
 vim.o.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.

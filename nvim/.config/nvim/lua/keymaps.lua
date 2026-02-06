@@ -6,9 +6,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
 
--- Save all buffers with ctrl+s
-vim.keymap.set('n', '<C-s>', '<cmd>wa<CR>')
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -29,8 +26,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set({ 'n', 'v' }, 'Ñ', ':')
 
 -- Buffer operations:
---
---
 vim.keymap.set('n', '<leader>bb', '<cmd>b#<CR>', { desc = '[B]uffer [B]efore' }) -- Go to the last edited buffer before the current one
 vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[B]uffer [D]elete' }) -- Delete currendt buffer
 vim.keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { desc = '[B]uffer [N]ext' }) -- Go to the next buffer
@@ -49,8 +44,6 @@ local function closeOtherBuffers()
   end
 end
 vim.keymap.set('n', '<leader>bo', closeOtherBuffers, { desc = '[B]uffer delete [O]thers' }) -- Delete all other buffers
---
---
 
 -- Easier splits
 vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = '[S]plit [V]ertical' })
