@@ -1,13 +1,14 @@
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-
   -- Include optional plugins (not always used or in testing stage)
   -- NOTE: I load them one by one to use only what I need at the moment
   -- require 'plugins.optional.cmake-tools',
-  -- require 'plugins.optional.love2d',
+  require 'plugins.optional.love2d',
+  -- require 'plugins.optional.kanagawa',
 
   -- Include main plugins folder
   { import = 'plugins.main' },
+
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

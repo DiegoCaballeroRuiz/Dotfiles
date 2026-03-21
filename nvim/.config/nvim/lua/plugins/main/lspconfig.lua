@@ -15,7 +15,6 @@ return {
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-
           local map = function(keys, func, desc, mode)
             mode = mode or 'n'
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
@@ -121,6 +120,7 @@ return {
         cssls = {},
         html = {},
         lua_ls = {},
+        rust_analyzer = {},
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})

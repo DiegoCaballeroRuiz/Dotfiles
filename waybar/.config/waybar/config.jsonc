@@ -80,6 +80,7 @@
     "format-muted": "󰝟",
     "on-click": "pavucontrol",
     "scroll-step": 1,
+    "interval": 5,
   },
 
   "custom/powermenu" : {

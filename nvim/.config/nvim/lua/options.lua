@@ -12,14 +12,16 @@ vim.o.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
--- Enable break indent
+-- Enable auto-indentation
 vim.o.breakindent = true
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
--- Set tab to two spaces
-vim.cmd 'set expandtab'
-vim.cmd 'set tabstop=2'
-vim.cmd 'set softtabstop=2'
-vim.cmd 'set shiftwidth=2'
+-- Set tab to four spaces
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
 
 -- Save undo history after closing the editor
 vim.o.undofile = true
