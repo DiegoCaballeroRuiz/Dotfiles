@@ -1,6 +1,4 @@
-#!/bin/bash
-
-# Directories
+#!/bin/bash # Directories
 IMAGES_DIR=~/Imágenes/Wallpaper/
 PROGRAMS_DIR=~/Programs
 SCRIPTS_DIR=~/.scripts
@@ -15,7 +13,7 @@ if  pacman -Q yay > /dev/null 2>&1; then
 else 
   echo "Installing AUR helper and dependencies"
   echo
-  sudo pacman -S --needed git base-devel curl wlogout
+  sudo pacman -S --needed git base-devel curl wget
   echo
 
   echo "Installing yay"
@@ -28,17 +26,29 @@ else
   echo "yay installed, continuing with setup instalation"
 fi
 
-echo "Installing all required apps for the setup"
-yay pacman -Sy foot fastfetch hyprland lazygit hyprpaper hyprlock swaync swayosd swayidle nvim tmux waybar pavucontrol blueman networkmanager swappy grim slurp starship ttf-dejavu-nerd stow fastfetch nautilus eza fzf fd zen-browser-bin rofi-wayland catppuccin-gtk-theme-mocha wlogout --noconfirm --needed
-
-# Install optional apps
-echo "Do you wish to install some extra apps that I always like to have? [y/N]"
-read INPUT
-
-if [[ $INPUT == y ]]; then
-  echo "Installing extra apps"
-  yay -Sy kolourpaint obs-studio discord steam --noconfirm --needed
+echo "Checking if filesystem is ready"
+if pacman -Q xdg-user-dirs > /dev/null 2>&1; then
+    echo "User directories already created"
+else
+    echo "Setting up user directories"
+    pacman -S xdg-user-dirs --noconfirm
+    xdg-user-dirs-update 
 fi
+
+echo "Installing hyprland dependencies"
+yay -Sy hyprland xdg-desktop-portal-hyprland hyprpolkitagent hyprlock hypridle hyprpaper swaync swayosd waybar --noconfirm --needed
+
+echo "Installing basic (and not so basic) utils"
+yay -Sy nautilus rofi zen-browser-bin pavucontrol  blueman swappy grim slurp --noconfirm --needed
+
+echo "Installing terminal goodies"
+yay -Sy foot fastfetch nvim tmux starship ttf-dejavu-nerd stow fastfetch nautilus eza fzf fd zen-browser-bin rofi-wayland catppuccin-gtk-theme-mocha wlogout --noconfirm --needed
+
+echo "Installing other apps"
+yay -Sy lazygit discord kolourpaint steam --noconfirm --needed
+
+echo "Installing stow to apply dotfiles"
+yay -Sy stow --needed --noconfirm
 
 echo "Instalation complete, applying configuration files now"
 
@@ -69,6 +79,9 @@ stow wlogout
 
 echo "Updating dotfiles for tmux"
 stow tmux
+
+echo "Updating rofi"
+stow rofi
 
 echo "Changing .bashrc"
 cp ./bash/.bashrc ~/.bashrc
