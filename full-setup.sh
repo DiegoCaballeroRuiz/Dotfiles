@@ -31,7 +31,7 @@ if pacman -Q xdg-user-dirs > /dev/null 2>&1; then
     echo "User directories already created"
 else
     echo "Setting up user directories"
-    pacman -S xdg-user-dirs --noconfirm
+    sudo pacman -S xdg-user-dirs --noconfirm
     xdg-user-dirs-update 
 fi
 
@@ -43,6 +43,9 @@ yay -Sy nautilus rofi zen-browser-bin pavucontrol  blueman swappy grim slurp --n
 
 echo "Installing terminal goodies"
 yay -Sy foot fastfetch nvim tmux starship ttf-dejavu-nerd stow fastfetch nautilus eza fzf fd zen-browser-bin rofi-wayland catppuccin-gtk-theme-mocha wlogout --noconfirm --needed
+
+echo "Installing system and nvidia utils"
+yay -Sy bluez libinput xf86-inpuy-libinput ffmpeg egl-wayland nvidia-open nvidia-utils nvidia-settings mesa vulkan-intel intel-media-driver pipewire pipewire-pulse pipewire-alsa wireplumber --needed --noconfirm
 
 echo "Installing other apps"
 yay -Sy lazygit discord kolourpaint steam --noconfirm --needed
@@ -89,8 +92,8 @@ cp ./bash/.bashrc ~/.bashrc
 # Media and scripts
 echo 
 echo "Copying bash scripts and media"
-cp ./images/* $IMAGES_DIR
-cp ./scripts/* $SCRIPTS_DIR
+cp -r ./images/* $IMAGES_DIR
+cp -r ./scripts/* $SCRIPTS_DIR
 
 # Done
 echo
