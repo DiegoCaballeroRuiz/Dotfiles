@@ -1,7 +1,6 @@
 -- Amazing fuzzy finder for files, text, lsp references, etc. Using the default fzf config
 return {
     src = 'https://github.com/ibhagwan/fzf-lua',
-    dependencies = { 'https://github.com/nvim-tree/nvim-web-devicons' }, -- optional
     config = function()
       local fzf = require 'fzf-lua'
 
