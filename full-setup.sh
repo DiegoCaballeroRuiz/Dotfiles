@@ -1,4 +1,5 @@
-#!/bin/bash # Directories
+#!/bin/bash 
+# Directories
 IMAGES_DIR=~/Imágenes/Wallpaper/
 PROGRAMS_DIR=~/Programs
 SCRIPTS_DIR=~/.scripts

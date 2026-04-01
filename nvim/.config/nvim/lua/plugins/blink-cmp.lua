@@ -1,14 +1,9 @@
+-- Autocompletion
 return {
-  { -- Autocompletion
-    'saghen/blink.cmp',
-    event = 'VimEnter',
-    version = '1.*',
-    dependencies = {
-      -- Snippet Engine
-    },
-    --- @module 'blink.cmp'
-    --- @type blink.cmp.Config
-    opts = {
+  src = 'https://github.com/saghen/blink.cmp',
+  config = function()
+    require('blink-cmp').setup {
+
       keymap = {
         preset = 'default',
         ['<c-y>'] = { 'accept', 'fallback' },
@@ -32,7 +27,7 @@ return {
 
       fuzzy = { implementation = 'lua' },
       signature = { enabled = true },
-    },
-  },
+    }
+  end,
 }
 -- vim: ts=2 sts=2 sw=2 et

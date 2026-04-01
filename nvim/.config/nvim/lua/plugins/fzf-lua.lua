@@ -1,9 +1,7 @@
+-- Amazing fuzzy finder for files, text, lsp references, etc. Using the default fzf config
 return {
-  {
-    -- Amazing fuzzy finder for files, text, lsp references, etc. Using the default fzf config
-    'ibhagwan/fzf-lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' }, -- optional
-    opts = {},
+    src = 'https://github.com/ibhagwan/fzf-lua',
+    dependencies = { 'https://github.com/nvim-tree/nvim-web-devicons' }, -- optional
     config = function()
       local fzf = require 'fzf-lua'
 
@@ -21,5 +19,4 @@ return {
       vim.keymap.set('n', '<leader>fl', fzf.lsp_references, { desc = '[F]ind [L]SP References' })
       vim.keymap.set('n', '<leader>ff', fzf.blines, { desc = '[Find] [F]uzzily in current buffer' })
     end,
-  },
 }

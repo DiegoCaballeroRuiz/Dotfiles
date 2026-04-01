@@ -1,6 +1,0 @@
--- Plugins para MUS
-
-return {
-  {
-  },
-}
