@@ -35,8 +35,6 @@ vim.o.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
-
--- Decrease mapped sequence wait time
 vim.o.timeoutlen = 300
 
 -- Configure how new splits should be opened
@@ -52,8 +50,8 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- Preview substitutions live
 vim.o.inccommand = 'split'
 
--- Don't show which line your cursor is on
-vim.o.cursorline = false
+-- Show (or don't ) which line your cursor is on
+vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10 
@@ -61,5 +59,8 @@ vim.o.scrolloff = 10
 -- if performing an operation that would fail due to unsaved changes in the buffer,
 -- instead raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
+
+-- Set font for GUI clients such as neovide
+vim.o.guifont = "DejaVuSansM Nerd Font"
 
 -- vim: ts=2 sts=2 sw=2 et

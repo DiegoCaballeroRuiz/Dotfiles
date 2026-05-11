@@ -20,6 +20,9 @@ return {
     -- Small autopair plugin
     require('mini.pairs').setup {}
 
+    -- Comment blocks as text objects
+    require('mini.comment').setup {}
+
     -- Fancy status line
     require('mini.statusline').setup {}
 
@@ -83,6 +86,7 @@ return {
         { mode = 'n', keys = '<leader>b', desc = '[B]uffers' },
         { mode = 'n', keys = '<leader>s', desc = '[S]plits' },
         { mode = 'n', keys = '<leader>m', desc = '[M]arkdown' },
+        { mode = 'n', keys = '<leader>c', desc = '[C]ompilation (Quickfix)' },
       },
 
       -- Popup configuration

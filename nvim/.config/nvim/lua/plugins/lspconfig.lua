@@ -118,8 +118,6 @@ return {
 
     local servers = {
       clangd = {},
-      cssls = {},
-      html = {},
       lua_ls = {},
       rust_analyzer = {},
     }

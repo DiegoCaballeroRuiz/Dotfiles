@@ -3,9 +3,6 @@
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
-
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -22,15 +19,18 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Tab navigation and managment
+vim.keymap.set('n', ']t', '<cmd>tabnext<CR>', { desc = 'Go to next tab'})
+vim.keymap.set('n', '[t', '<cmd>tabprevious<CR>', { desc = 'Go to previous tab'})
+vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = '[T]ab [C]lose'})
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[T]ab [N]ew'})
+
 -- Enter command mode through Ñ (spanish equivalent to :)
 vim.keymap.set({ 'n', 'v' }, 'Ñ', ':')
 
 -- Buffer operations:
 vim.keymap.set('n', '<leader>bb', '<cmd>b#<CR>', { desc = '[B]uffer [B]efore' }) -- Go to the last edited buffer before the current one
 vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[B]uffer [D]elete' }) -- Delete currendt buffer
-vim.keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { desc = '[B]uffer [N]ext' }) -- Go to the next buffer
-vim.keymap.set('n', '<leader>bp', '<cmd>bprev<CR>', { desc = '[B]uffer [P]revious' }) -- Go to the previous buffer
-vim.keymap.set('n', '<leader>ba', '<cmd>%bd<CR>', { desc = '[B]uffer [P]revious' }) -- Delete all active buffers
 
 -- A little function to close all buffers but the one currently in use
 local function closeOtherBuffers()
@@ -49,9 +49,6 @@ vim.keymap.set('n', '<leader>bo', closeOtherBuffers, { desc = '[B]uffer delete [
 vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = '[S]plit [V]ertical' })
 vim.keymap.set('n', '<leader>sh', '<cmd>split<CR>', { desc = '[S]plit [H]orizontal' })
 
--- Cd vim to the directory of the file currently editing
-vim.keymap.set('n', '<leader>cd', '<cmd>lcd%:p:h<CR>', { desc = "[C][D] to file's directory" })
-
 -- Yank and paste into/from system clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = '[Y]ank to system clipboard' })
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { desc = '[P]aste from system clipboard' })
@@ -68,5 +65,12 @@ end, { desc = '[B]uffer [F]ormat' })
 
 -- To use norm command more often
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>n', ':norm ', { desc = '[N]orm command' })
+
+-- Quickfix list goodies
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix diagnostics' })
+vim.keymap.set('n', '<leader>cn', '<cmd>cnext<CR>', { desc = '[C][N]ext'})
+vim.keymap.set('n', '<leader>cp', '<cmd>cprev<CR>', { desc = '[C][P]rev'})
+vim.keymap.set('n', '<leader>co', '<cmd>copen<CR>', { desc = '[C][O]pen'})
+vim.keymap.set('n', '<leader>cc', '<cmd>cclose<CR>', { desc = '[C][C]lose'})
 
 -- vim: ts=2 sts=2 sw=2 et
