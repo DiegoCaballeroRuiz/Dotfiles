@@ -2,6 +2,9 @@
 --  See `:help vim.o`
 --  For more options, you can see `:help option-list`
 
+-- Enable Nvim 0.12 new UI
+require('vim._core.ui2').enable {}
+
 -- Enable relative line numbers
 vim.o.number = true
 vim.o.relativenumber = true
@@ -54,13 +57,13 @@ vim.o.inccommand = 'split'
 vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10 
+vim.o.scrolloff = 10
 
 -- if performing an operation that would fail due to unsaved changes in the buffer,
 -- instead raise a dialog asking if you wish to save the current file(s)
 vim.o.confirm = true
 
 -- Set font for GUI clients such as neovide
-vim.o.guifont = "DejaVuSansM Nerd Font"
+vim.o.guifont = 'DejaVuSansM Nerd Font'
 
 -- vim: ts=2 sts=2 sw=2 et

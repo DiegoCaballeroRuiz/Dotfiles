@@ -1,93 +1,92 @@
 {
-  "layer": "bottom",
-  "position": "top",
-  "modules-left": ["clock"],
-  "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio","battery","bluetooth","network",],
-
-  "hyprland/workspaces": { 
-    "format": "{icon}",
-    "format-icons": {
-      "1": "",
-      "2": "󰖟",
-      "3": "",
-      "4": "",
-      "5": "󰓇",
-    }
+    "layer": "bottom",
+    "position": "top",
+    "modules-left": ["clock"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["pulseaudio","battery","bluetooth","network",],
+"hyprland/workspaces": { 
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "󰖟",
+            "3": "",
+            "4": "",
+            "5": "󰓇",
+        },
 
     // "persistent-workspaces": {
     //   "*": 5
     // },
 
-  },
-
-  "custom/notification": {
-    "tooltip": false, "format": " ",
-    "on-click": "swaync-client -t -sw",
-    "escape": true
-  },
-
-  "clock": {
-    "format": "󰥔 {:%H:%M 󰃭 %d/%m/%Y}" ,
-    "interval": 1,   
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "on-click": "gnome-calendar &",
-  },
-
-  "network": {
-    "interface": "wlan0",
-    "interval": 5,
-    "format-wifi": "",
-    "format-ethernet":"",
-    "format-disconnected": "",
-    "on-click": "foot -e nmtui",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
-  },
-
-  "bluetooth": {
-    "interval": 5,
-    "format-on": "󰂯",
-    "format-off": "󰂲",
-    "format-disabled": "󰂲",
-    "format-connected-battery": "{device_battery_percentage}% 󰂯",
-    "on-click": "blueman-manager",
-  }, 
-
-  "battery": {
-    "interval": 5,
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
     },
-    "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰂄",
-    "format-plugged": "{capacity}% 󰂄 ",
-    "format-alt": "{time} {icon}",
-    "format-icons": [
-      "󰁻",
-      "󰁼",
-      "󰁾",
-      "󰂀",
-      "󰂂",
-      "󰁹"
-    ],
-  },
 
-  "pulseaudio": {
-    "format": "{volume}% ",
-    "format-muted": "󰝟",
-    "on-click": "pavucontrol",
-    "scroll-step": 1,
-    "interval": 5,
-  },
+    "custom/notification": {
+        "tooltip": false, "format": " ",
+        "on-click": "swaync-client -t -sw",
+        "escape": true
+    },
 
-  "custom/powermenu" : {
-    "tooltip": false,
-    "format": "⏻",
-    "on-click": "pkill wlogout; wlogout",
-    "escape": true,
-  },
+    "clock": {
+        "format": "󰥔 {:%H:%M 󰃭 %d/%m/%Y}" ,
+        "interval": 1,   
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "on-click": "gnome-calendar &",
+    },
+
+    "network": {
+        "interface": "wlan0",
+        "interval": 5,
+        "format-wifi": "",
+        "format-ethernet":"",
+        "format-disconnected": "",
+        "on-click": "foot -e nmtui",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+
+    "bluetooth": {
+        "interval": 5,
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "󰂲",
+        "format-connected-battery": "{device_battery_percentage}% 󰂯",
+        "on-click": "blueman-manager",
+    }, 
+
+    "battery": {
+        "interval": 5,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄 ",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+        ],
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% ",
+        "format-muted": "󰝟",
+        "on-click": "pavucontrol",
+        "scroll-step": 1,
+        "interval": 5,
+    },
+
+    "custom/powermenu" : {
+        "tooltip": false,
+        "format": "⏻",
+        "on-click": "pkill wlogout; wlogout",
+        "escape": true,
+    },
 }

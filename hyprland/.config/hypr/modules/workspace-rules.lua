@@ -31,6 +31,7 @@ hl.window_rule({ match = { class = "zen" }, border_size = 0, workspace = 2 })
 hl.window_rule({ match = { class = "discord" }, border_size = 0, workspace = 4 })
 hl.window_rule({ match = { class = "Spotify" }, border_size = 0, workspace = 5 })
 hl.window_rule({ match = { class = "code" }, border_size = 0, workspace = 1 })
+hl.window_rule({ match = { class = "com.obsproject.Studio" }, border_size = 0, workspace = 5 })
 
 -- Floating by default
 hl.window_rule({ match = { class = "org.gnome.Nautilus" }, float = true, center = true, size = { 1000, 650 } })
