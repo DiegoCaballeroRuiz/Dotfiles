@@ -1,7 +1,7 @@
 hl.config({
     input = {
         -- Only works if you dont have multiple devices
-        --kb_layout  = "es",
+        kb_layout  = "us",
 
         follow_mouse = 1,
         numlock_by_default = true,
@@ -30,6 +30,6 @@ hl.device({
 
 -- Wireless keyboard with us layout
 hl.device({
-    name = "at-translated-set-2-keyboard",
-    kb_layout = "es",
+    name = "compx-2.4G-wireless-receiver-keyboard",
+    kb_layout = "us",
 })

@@ -119,7 +119,15 @@ return {
     local servers = {
       clangd = {},
       lua_ls = {},
-      rust_analyzer = {},
+      rust_analyzer = {
+        cargo = {
+          buildScripts = { enable = true },
+          extraEnv = {
+            DEVKITPRO = "/opt/devkitpro",
+            DEVKITARM = "/opt/devkitpro/devkitARM",
+          },
+        },
+      },
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})
