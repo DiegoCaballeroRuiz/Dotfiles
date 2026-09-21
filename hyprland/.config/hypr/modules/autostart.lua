@@ -9,6 +9,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper &")
 
     -- Brightness and volume up/down notifications
+    hl.exec_cmd("swayosd-libinput-backend &")
     hl.exec_cmd("swayosd-server &")
 
     -- Polkit agent
