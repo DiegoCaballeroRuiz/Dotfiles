@@ -28,8 +28,10 @@ hl.window_rule({
 
 -- Borderless, workspace attached
 hl.window_rule({ match = { class = "zen" }, border_size = 0, workspace = 2 })
+hl.window_rule({ match = { class = "com.microsoft.VSCode" }, border_size = 0, workspace = 1 })
 hl.window_rule({ match = { class = "discord" }, border_size = 0, workspace = 4 })
 hl.window_rule({ match = { class = "Spotify" }, border_size = 0, workspace = 5 })
+hl.window_rule({ match = { class = "spotifast" }, border_size = 0, workspace = 5 })
 hl.window_rule({ match = { class = "code" }, border_size = 0, workspace = 1 })
 hl.window_rule({ match = { class = "com.obsproject.Studio" }, border_size = 0, workspace = 5 })
 

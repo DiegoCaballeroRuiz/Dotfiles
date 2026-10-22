@@ -23,6 +23,9 @@ return {
         -- Comment blocks as text objects
         require('mini.comment').setup {}
 
+        -- Small align to character utility
+        require('mini.align').setup {}
+
         -- Fancy status line
         require('mini.statusline').setup {}
 

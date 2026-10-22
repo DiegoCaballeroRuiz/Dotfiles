@@ -14,6 +14,9 @@ require 'keymaps'
 -- [[ Auto-commands ]]
 require 'autocmds'
 
+-- [[ Custom-commands ]]
+require 'customcmds'
+
 -- [[ Plugins ]]
 require 'pack-plugins'
 

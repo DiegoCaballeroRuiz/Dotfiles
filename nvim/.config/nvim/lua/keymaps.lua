@@ -20,10 +20,10 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Tab navigation and managment
-vim.keymap.set('n', ']t', '<cmd>tabnext<CR>', { desc = 'Go to next tab'})
-vim.keymap.set('n', '[t', '<cmd>tabprevious<CR>', { desc = 'Go to previous tab'})
-vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = '[T]ab [C]lose'})
-vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[T]ab [N]ew'})
+vim.keymap.set('n', ']t', '<cmd>tabnext<CR>', { desc = 'Go to next tab' })
+vim.keymap.set('n', '[t', '<cmd>tabprevious<CR>', { desc = 'Go to previous tab' })
+vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<CR>', { desc = '[T]ab [C]lose' })
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnew<CR>', { desc = '[T]ab [N]ew' })
 
 -- Enter command mode through Ñ (spanish equivalent to :)
 vim.keymap.set({ 'n', 'v' }, 'Ñ', ':')
@@ -54,20 +54,23 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = '[Y]ank to system clip
 vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { desc = '[P]aste from system clipboard' })
 
 -- Format buffer without plugins using native lsp
-vim.keymap.set('n', '<leader>bf', function ()
-  vim.lsp.buf.format({
+vim.keymap.set('n', '<leader>bf', function()
+  vim.lsp.buf.format {
     async = true,
-  })
+  }
 end, { desc = '[B]uffer [F]ormat' })
+
+-- Correctly indent all text in buffer
+vim.keymap.set('n', '<leader>bi', 'mtgg=G`t', { desc = '[B]uffer [I]ndent' })
 
 -- To use norm command more often
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>n', ':norm ', { desc = '[N]orm command' })
 
 -- Quickfix list goodies
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix diagnostics' })
-vim.keymap.set('n', '<leader>cn', '<cmd>cnext<CR>', { desc = '[C][N]ext'})
-vim.keymap.set('n', '<leader>cp', '<cmd>cprev<CR>', { desc = '[C][P]rev'})
-vim.keymap.set('n', '<leader>co', '<cmd>copen<CR>', { desc = '[C][O]pen'})
-vim.keymap.set('n', '<leader>cc', '<cmd>cclose<CR>', { desc = '[C][C]lose'})
+vim.keymap.set('n', '<leader>cn', '<cmd>cnext<CR>', { desc = '[C][N]ext' })
+vim.keymap.set('n', '<leader>cp', '<cmd>cprev<CR>', { desc = '[C][P]rev' })
+vim.keymap.set('n', '<leader>co', '<cmd>copen<CR>', { desc = '[C][O]pen' })
+vim.keymap.set('n', '<leader>cc', '<cmd>cclose<CR>', { desc = '[C][C]lose' })
 
 -- vim: ts=2 sts=2 sw=2 et
