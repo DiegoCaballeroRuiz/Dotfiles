@@ -1,7 +1,12 @@
 hl.config({
     input = {
-        -- Only works if you dont have multiple devices
+        -- Default setup for external US-layout keyboards
         kb_layout  = "us",
+        kb_variant = "",
+        kb_model = "",
+
+        -- Enable compose key
+        kb_options = "compose:rctrl",
 
         follow_mouse = 1,
         numlock_by_default = true,
@@ -26,10 +31,4 @@ hl.gesture({
 hl.device({
     name = "at-translated-set-2-keyboard",
     kb_layout = "es",
-})
-
--- Wireless keyboard with us layout
-hl.device({
-    name = "compx-2.4G-wireless-receiver-keyboard",
-    kb_layout = "us",
 })

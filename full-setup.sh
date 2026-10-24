@@ -90,6 +90,9 @@ stow rofi
 echo "Changing .bashrc"
 cp ./bash/.bashrc ~/.bashrc
 
+echo "Changing .XCompose"
+stow xcompose
+
 # Media and scripts
 echo 
 echo "Copying bash scripts and media"
